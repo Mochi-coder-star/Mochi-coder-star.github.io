@@ -1,0 +1,904 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0c1017">
+<meta name="description" content="Currículum y portafolio de Emilia Demercado. Ciberseguridad, agentes de IA, ponencias y proyectos.">
+<title>Emilia Demercado · CV y portafolio</title>
+<style>
+:root {
+  color-scheme: dark;
+  --bg: #0c1017;
+  --panel: #111923;
+  --ink: #edf4f2;
+  --muted: #a4b2bd;
+  --line: #2a3944;
+  --green: #bbf583;
+  --cyan: #7ce7dc;
+  --mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  --sans: "Inter", system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: radial-gradient(ellipse at 85% 6%, #18302e80, transparent 32rem), var(--bg); color: var(--ink); font: 1rem/1.65 var(--sans); }
+[hidden] { display: none !important; }
+a { color: inherit; text-underline-offset: .24em; }
+a:hover { color: var(--green); }
+button { font: inherit; }
+:focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; }
+.wrap { width: min(1100px, calc(100% - 3rem)); margin-inline: auto; }
+.skip { position: absolute; z-index: 5; inset: 1rem auto auto 1rem; padding: .75rem; background: var(--bg); transform: translateY(-180%); }
+.skip:focus { transform: none; }
+.site-header { border-bottom: 1px solid var(--line); }
+.bar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .75rem 1.5rem; padding-block: .85rem; }
+.brand { color: var(--green); font: 700 1rem var(--mono); text-decoration: none; }
+nav { display: flex; flex-wrap: wrap; gap: .4rem 1.15rem; }
+nav a { text-decoration: none; color: var(--muted); font-size: .9rem; }
+.toolbar { display: flex; align-items: center; gap: .5rem; }
+.control { border: 1px solid var(--line); border-radius: .3rem; background: var(--bg); color: var(--ink); cursor: pointer; padding: .42rem .7rem; font: .84rem var(--mono); min-height: 2.4rem; }
+.control:hover { border-color: var(--green); color: var(--green); }
+.hero { display: grid; grid-template-columns: 1.4fr 1fr; align-items: center; gap: clamp(1.5rem, 6vw, 6rem); padding-block: clamp(3rem, 7vw, 6rem); }
+.kicker, .label, .tag { font: .83rem/1.45 var(--mono); }
+.kicker { color: var(--green); margin: 0 0 1.15rem; letter-spacing: .045em; text-transform: uppercase; }
+h1, h2, h3, p { margin-top: 0; }
+h1 { font-size: clamp(3.05rem, 7.3vw, 6.5rem); line-height: .94; letter-spacing: -.085em; margin-bottom: 1.35rem; }
+h1 span { display: block; color: var(--cyan); }
+.intro { color: var(--muted); max-width: 49ch; font-size: clamp(1rem, 1.6vw, 1.13rem); }
+.hero-links { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; margin-top: 1.75rem; }
+.primary { display: inline-block; border: 1px solid var(--green); padding: .55rem .95rem; border-radius: .3rem; background: var(--green); color: #10170b; text-decoration: none; font-weight: 700; }
+.primary:hover { color: #10170b; background: #defabf; }
+.signal { overflow: hidden; position: relative; isolation: isolate; display: grid; place-items: center; width: 100%; max-width: 24rem; justify-self: end; aspect-ratio: 1; border: 1px solid #456052; border-radius: .5rem; background: radial-gradient(circle at 50% 52%, #253a33 0%, #142620 41%, #0e171b 76%); }
+.signal::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(#82d3ba20 1px, transparent 1px), linear-gradient(90deg, #82d3ba20 1px, transparent 1px); background-size: 7% 7%; mask-image: radial-gradient(ellipse, #000, #0003); }
+.signal::after { content: ""; position: absolute; inset: .7rem; pointer-events: none; border: 1px solid #7ce7dc4a; clip-path: polygon(0 0, 100% 0, 100% 9%, 91% 9%, 91% 91%, 100% 91%, 100% 100%, 0 100%, 0 91%, 9% 91%, 9% 9%, 0 9%); }
+.signal-ticks { position: absolute; inset: 8%; border-radius: 50%; background: repeating-conic-gradient(from 0deg, #a4edc475 0deg .45deg, transparent .45deg 10deg); mask-image: radial-gradient(farthest-side, transparent 95%, black 96%, black 99%, transparent 100%); }
+.scope { position: absolute; width: 74%; aspect-ratio: 1; border: 1px solid #79bc9f75; border-radius: 50%; background: repeating-radial-gradient(circle, transparent 0 17%, #a4edc438 17.4% 17.8%, transparent 18.1% 23%); }
+.scope::before { content: ""; position: absolute; inset: 0; border-radius: inherit; background: conic-gradient(from 25deg, #adf48600 0deg, #adf48600 293deg, #adf48644 359deg, #adf486d4 360deg); animation: sweep 11s linear infinite; }
+.scope::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 49.8%, #a4edc44d 50%, transparent 50.3%), linear-gradient(transparent 49.8%, #a4edc44d 50%, transparent 50.3%); }
+.blip { position: absolute; z-index: 1; width: .44rem; height: .44rem; border-radius: 50%; background: var(--green); box-shadow: 0 0 14px 3px #bbf58e85; animation: pulse 3.5s ease-in-out infinite alternate; }
+.blip:nth-child(1) { left: 31%; top: 34%; }
+.blip:nth-child(2) { left: 68%; top: 52%; animation-delay: -1s; }
+.blip:nth-child(3) { left: 43%; top: 73%; animation-delay: -2.4s; background: var(--cyan); }
+.signal-mark { position: absolute; z-index: 2; display: grid; place-items: center; border: 1px solid #b0edb18c; border-radius: 50%; background: #11221d; width: 25%; aspect-ratio: 1; color: var(--green); font: 600 clamp(1rem, 3vw, 1.85rem) var(--mono); box-shadow: 0 0 24px #b0edb126; }
+.signal-note { position: absolute; bottom: .8rem; right: 1rem; color: #acd9c2; font: .76rem var(--mono); }
+.radar-fallback { position: absolute; inset: 0; display: grid; place-items: center; }
+.signal.enhanced { aspect-ratio: auto; max-width: 29rem; }
+.network-panel { display: grid; width: 100%; position: relative; z-index: 1; background: #101b20; }
+.network-stage { position: relative; min-width: 0; overflow: hidden; background: radial-gradient(ellipse at 49% 48%, #233e37, #101e22 54%, #0a111a 91%); }
+.network-stage .radar-fallback { pointer-events: none; opacity: .8; }
+.network-stage .radar-fallback::before { content: ""; position: absolute; inset: 0; background: linear-gradient(#82d3ba20 1px, transparent 1px), linear-gradient(90deg, #82d3ba20 1px, transparent 1px); background-size: 1.35rem 1.35rem; mask-image: radial-gradient(ellipse, #000, #0003); }
+.network-stage .signal-ticks { inset: auto; height: 88%; width: auto; aspect-ratio: 1; }
+.network-stage .scope { height: 76%; width: auto; }
+.network-stage .signal-mark, .network-stage .signal-note { display: none; }
+.network-stage::before { content: ""; position: absolute; inset: .55rem; pointer-events: none; border: 1px solid #7ce7dc38; clip-path: polygon(0 0, 100% 0, 100% 9%, 91% 9%, 91% 91%, 100% 91%, 100% 100%, 0 100%, 0 91%, 9% 91%, 9% 9%, 0 9%); z-index: 1; }
+.network-stage canvas { display: block; position: relative; width: 100%; height: clamp(14rem, 25vw, 20rem); touch-action: none; cursor: grab; }
+.network-stage canvas:active { cursor: grabbing; }
+.network-toolbar, .network-legend { display: flex; flex-wrap: wrap; align-items: center; gap: .38rem; }
+.network-toolbar { justify-content: space-between; padding: .65rem .75rem; border-bottom: 1px solid #7ce7dc29; }
+.network-toolbar strong { color: var(--cyan); font: 650 .83rem/1.4 var(--mono); }
+.network-tools { display: flex; flex-wrap: wrap; gap: .38rem; }
+.network-tools .control { min-height: 2.15rem; padding: .35rem .5rem; }
+.network-hint { position: absolute; inset: auto .75rem .7rem; color: #bccfd1; pointer-events: none; font: .75rem/1.4 var(--mono); margin: 0; }
+.network-details { padding: .65rem .75rem; border-top: 1px solid #7ce7dc29; }
+.network-hover { position: absolute; z-index: 2; top: .78rem; left: .85rem; max-width: calc(100% - 1.7rem); color: var(--ink); background: #0c141de8; border: 1px solid var(--line); border-radius: .3rem; font: .75rem/1.3 var(--mono); padding: .28rem .45rem; pointer-events: none; }
+.network-picker { display: block; margin-top: .65rem; }
+.network-picker select { width: 100%; min-width: 0; color: var(--ink); background: #0c141d; border: 1px solid var(--line); border-radius: .3rem; padding: .38rem .5rem; font: inherit; font-size: .88rem; }
+.network-readout { margin-top: .65rem; padding-top: .55rem; border-top: 1px dashed var(--line); }
+.network-readout strong { display: block; font-size: .92rem; line-height: 1.4; }
+.network-readout a { display: inline-block; color: var(--cyan); font-size: .84rem; }
+.cv [tabindex="-1"] { scroll-margin-top: 1rem; }
+.network-legend .control { display: inline-flex; align-items: center; gap: .35rem; }
+.network-legend .control::before { content: ""; border-radius: 50%; width: .45rem; height: .45rem; background: var(--layer-color); }
+.network-legend .control[aria-pressed="true"] { border-color: var(--layer-color); color: var(--layer-color); }
+.network-legend [data-layer="0"] { --layer-color: #7ce7dc; }
+.network-legend [data-layer="1"] { --layer-color: #bbf583; }
+.network-legend [data-layer="2"] { --layer-color: #c1acff; }
+.network-caption { margin: .5rem 0 0; color: var(--muted); font-size: .83rem; min-height: 2.75em; }
+.network-dialog { border: 1px solid #567b72; border-radius: .5rem; padding: 0; width: min(62rem, calc(100% - 1.5rem)); max-height: calc(100% - 1.5rem); background: #101b20; color: var(--ink); box-shadow: 0 1rem 5rem #000b; }
+.network-dialog::backdrop { background: #060a12db; backdrop-filter: blur(5px); }
+.network-dialog .network-stage canvas { height: clamp(10rem, 61dvh, 36rem); }
+.network-dialog .network-caption { min-height: 0; }
+#network-motion { display: none; }
+.network-dialog #network-motion { display: inline-block; }
+@keyframes sweep { to { transform: rotate(1turn); } }
+@keyframes pulse { from { opacity: .42; } to { opacity: 1; } }
+.paused .scope::before, .paused .blip { animation-play-state: paused; }
+.cv { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); gap: 2.5rem clamp(1.4rem, 5vw, 4rem); padding-bottom: 3.75rem; }
+.cv > section { min-width: 0; border-top: 1px solid var(--line); padding-top: 1.25rem; scroll-margin-top: 1rem; position: relative; }
+.cv > section::before { content: ""; position: absolute; top: -1px; left: 0; width: 2.5rem; height: 1px; background: var(--cyan); }
+h2 { font-size: clamp(1.55rem, 3vw, 2.3rem); letter-spacing: -.045em; line-height: 1.16; margin-bottom: 1.25rem; }
+h3 { font-size: 1.13rem; line-height: 1.3; margin-bottom: .45rem; }
+.entry { padding-block: .85rem; }
+.entry + .entry { border-top: 1px dashed var(--line); }
+.label { color: var(--cyan); margin-bottom: .4rem; }
+.copy { color: var(--muted); margin-bottom: .55rem; }
+.copy:last-child { margin-bottom: 0; }
+.tags { list-style: none; display: flex; flex-wrap: wrap; gap: .45rem; padding: 0; margin: .75rem 0 0; }
+.tag { border: 1px solid var(--line); border-radius: .25rem; padding: .23rem .5rem; color: var(--muted); }
+.project { --accent: var(--green); background: linear-gradient(110deg, color-mix(in srgb, var(--accent) 7%, var(--panel)), var(--panel) 65%); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: .35rem; padding: 1rem 1.15rem; }
+.project + .project { margin-top: .85rem; }
+.project.water { --accent: var(--cyan); }
+.project.gold { --accent: #ebbe86; border-left-color: var(--accent); }
+.project.purple { --accent: #c1acff; border-left-color: var(--accent); }
+.project .label { color: var(--accent); }
+.minor-heading { margin: 1.12rem 0 .6rem; font-size: 1rem; color: var(--ink); }
+.proficiency { margin: 0; }
+.proficiency div { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .25rem .8rem; padding: .35rem 0; border-bottom: 1px dashed var(--line); }
+.proficiency dt { font-weight: 600; }
+.proficiency dd { margin: 0; color: var(--muted); }
+.medal { display: inline-flex; align-items: center; gap: .5rem; color: #ebbe86; }
+.medal::before { content: ""; width: .65rem; aspect-ratio: 1; border: 1px solid currentColor; transform: rotate(45deg); background: #ebbe8633; }
+#laboratorios { grid-column: 1 / -1; }
+.lab-table { list-style: none; margin: 1rem 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: .55rem; }
+.lab-item { min-width: 0; overflow-wrap: anywhere; display: grid; align-content: start; gap: .25rem; border: 1px solid var(--line); background: var(--panel); padding: .6rem .8rem; border-radius: .3rem; }
+.lab-item .label { margin: 0; }
+.footer { display: flex; justify-content: space-between; flex-wrap: wrap; align-items: baseline; gap: .6rem 1.5rem; padding-block: 1.3rem; border-top: 1px solid var(--line); color: var(--muted); }
+@media (max-width: 680px) {
+  .wrap { width: calc(100% - 2rem); }
+  .bar nav { order: 3; width: 100%; }
+  .hero, .cv { grid-template-columns: 1fr; }
+  .signal { justify-self: start; width: min(100%, 16rem); }
+  .signal.enhanced { width: min(100%, 31rem); }
+  .hero { padding-block: 2.65rem; gap: 1.85rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .scope::before, .blip { animation: none; }
+  #motion { display: none !important; }
+  #network-motion { display: none !important; }
+}
+@media print {
+  :root { color-scheme: light; --bg: white; --panel: white; --ink: #15191a; --muted: #30383c; --line: #a6b0b1; --cyan: #1f5e57; --green: #335b21; }
+  body { background: white; }
+  .site-header, .signal, .network-dialog, .hero-links, .skip, #lab-empty { display: none !important; }
+  .medal { color: #765120; }
+  .project { background: white; }
+  .project .label { color: var(--cyan); }
+  .wrap { width: 100%; }
+  .hero { display: block; padding: 0 0 .75rem; }
+  h1 { font-size: 2.45rem; }
+  h1 span { display: inline; color: inherit; }
+  .cv { grid-template-columns: 1.55fr 1fr; gap: 1rem; padding-bottom: 1rem; }
+  .cv > section { padding-top: .6rem; }
+  h2 { font-size: 1.35rem; margin-bottom: .45rem; }
+  .entry, .project { break-inside: avoid; padding-block: .4rem; }
+}
+</style>
+</head>
+<body id="inicio">
+<a class="skip" href="#cv"><span data-es>Saltar al currículum</span><span data-en hidden>Skip to CV</span></a>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="#inicio" aria-label="Emilia Demercado">[ED]</a>
+    <nav aria-label="Secciones" data-label-es="Secciones" data-label-en="Sections">
+      <a href="#ponencias"><span data-es>Ponencias</span><span data-en hidden>Talks</span></a>
+      <a href="#credenciales"><span data-es>Credenciales</span><span data-en hidden>Credentials</span></a>
+      <a href="#proyectos"><span data-es>Proyectos</span><span data-en hidden>Projects</span></a>
+      <a href="#educacion"><span data-es>Educación</span><span data-en hidden>Education</span></a>
+      <a href="#laboratorios"><span data-es>Laboratorios</span><span data-en hidden>Labs</span></a>
+    </nav>
+    <div class="toolbar">
+      <button class="control" id="motion" type="button" hidden><span data-es>Pausar</span><span data-en hidden>Pause</span></button>
+      <button class="control" id="language" type="button" hidden lang="en" aria-label="Read in English">EN</button>
+    </div>
+  </div>
+</header>
+<main class="wrap" id="cv" tabindex="-1">
+  <div class="hero">
+    <div>
+      <p class="kicker"><span data-es>Currículum · Panamá</span><span data-en hidden>CV · Panama</span></p>
+      <h1>Emilia <span>Demercado</span></h1>
+      <p class="intro"><span data-es>Estudio Ingeniería en Sistemas y Computación e Ingeniería en Ciberseguridad. Exploro la seguridad de los agentes de IA y convierto lo que aprendo en charlas, prototipos y juegos.</span><span data-en hidden>I study Systems and Computer Engineering and Cybersecurity Engineering. I explore the security of AI agents and turn what I learn into talks, prototypes, and games.</span></p>
+      <div class="hero-links">
+        <a class="primary" href="#ponencias"><span data-es>Ver experiencia</span><span data-en hidden>See experience</span></a>
+        <a href="https://github.com/Mochi-coder-star">GitHub</a>
+      </div>
+    </div>
+    <div class="signal paused">
+      <div class="radar-fallback" aria-hidden="true">
+        <div class="signal-ticks"></div>
+        <div class="scope"><i class="blip"></i><i class="blip"></i><i class="blip"></i></div>
+        <div class="signal-mark">&gt;_</div>
+        <span class="signal-note">ED / PA</span>
+      </div>
+      <div class="network-panel" role="group" aria-labelledby="network-title" hidden>
+        <div class="network-toolbar">
+          <strong id="network-title"><span data-es>Explora mi CV</span><span data-en hidden>Explore my CV</span></strong>
+          <div class="network-tools">
+            <button class="control" id="network-zoom-out" type="button" aria-label="Alejar" data-label-es="Alejar" data-label-en="Zoom out">−</button>
+            <button class="control" id="network-zoom-in" type="button" aria-label="Acercar" data-label-es="Acercar" data-label-en="Zoom in">+</button>
+            <button class="control" id="network-reset" type="button"><span data-es>Reiniciar</span><span data-en hidden>Reset</span></button>
+            <button class="control" id="network-expand" type="button" aria-haspopup="dialog"><span data-es>Ampliar</span><span data-en hidden>Expand</span></button>
+            <button class="control" id="network-motion" type="button"></button>
+            <button class="control" id="network-close" type="button" hidden><span data-es>Cerrar</span><span data-en hidden>Close</span></button>
+          </div>
+        </div>
+        <div class="network-stage">
+          <canvas id="network-canvas" tabindex="0" aria-label="Vista de la red neuronal" data-label-es="Vista de la red neuronal" data-label-en="Neural network view" aria-describedby="network-hint"></canvas>
+          <span class="network-hover" id="network-hover" aria-hidden="true" hidden></span>
+          <p id="network-hint" class="network-hint"><span data-es>Gira con el cursor o las flechas · Elige un nodo</span><span data-en hidden>Drag or use arrow keys · Pick a node</span></p>
+        </div>
+        <div class="network-details">
+          <div class="network-legend" role="group" aria-label="Categorías del currículum" data-label-es="Categorías del currículum" data-label-en="CV categories">
+            <button class="control" data-layer="0" type="button" aria-pressed="false"><span data-es>Logros</span><span data-en hidden>Achievements</span></button>
+            <button class="control" data-layer="1" type="button" aria-pressed="false"><span data-es>Habilidades</span><span data-en hidden>Skills</span></button>
+            <button class="control" data-layer="2" type="button" aria-pressed="false"><span data-es>Proyectos</span><span data-en hidden>Projects</span></button>
+          </div>
+          <label class="network-picker">
+            <select id="network-node" aria-label="Seleccionar un nodo" data-label-es="Seleccionar un nodo" data-label-en="Select a node"></select>
+          </label>
+          <div class="network-readout">
+            <div aria-live="polite">
+              <strong id="network-entry-title" hidden></strong>
+              <p class="network-caption" id="network-caption"></p>
+            </div>
+            <a id="network-entry-link" hidden><span data-es>Ver en el CV</span><span data-en hidden>View in CV</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <dialog class="network-dialog" id="network-dialog" aria-label="Vista ampliada de la red neuronal" data-label-es="Vista ampliada de la red neuronal" data-label-en="Expanded neural network view"></dialog>
+  <div class="cv">
+    <section id="ponencias" aria-labelledby="talks-title">
+      <h2 id="talks-title"><span data-es>Ponencias</span><span data-en hidden>Speaking</span></h2>
+      <article class="entry" id="dojoconf-2026" tabindex="-1">
+        <p class="label">DojoConf · <time datetime="2026">2026</time></p>
+        <h3 lang="en">Digital extortion in the era of Agentic AI</h3>
+        <p class="copy"><span data-es>Ponencia individual sobre el impacto de los agentes de IA en el panorama de la extorsión digital.</span><span data-en hidden>Solo talk on how AI agents change the digital extortion landscape.</span></p>
+      </article>
+      <article class="entry" id="dojoconf-2025" tabindex="-1">
+        <p class="label">DojoConf · <time datetime="2025">2025</time></p>
+        <h3><span data-es>Ingeniería ofensiva en la era de la IA</span><span data-en hidden>Offensive engineering in the age of AI</span></h3>
+        <p class="copy"><span data-es>Coponencia sobre la relación entre inteligencia artificial y seguridad ofensiva.</span><span data-en hidden>Co-presented a talk on the relationship between AI and offensive security.</span></p>
+      </article>
+    </section>
+    <section id="credenciales" aria-labelledby="credentials-title">
+      <h2 id="credentials-title"><span data-es>Credenciales</span><span data-en hidden>Credentials</span></h2>
+      <article class="entry" id="ejpt" tabindex="-1">
+        <p class="label">INE · <time datetime="2026">2026</time></p>
+        <h3>eJPT</h3>
+        <p class="copy" lang="en">eLearnSecurity Junior Penetration Tester</p>
+      </article>
+      <article class="entry" id="agentes-hf" tabindex="-1">
+        <p class="label">Hugging Face · <time datetime="2026">2026</time></p>
+        <h3 lang="en">AI Agents Fundamentals</h3>
+        <p class="copy"><span data-es>Fundamentos de agentes de inteligencia artificial.</span><span data-en hidden>Foundational coursework on AI agents.</span></p>
+      </article>
+      <h3 class="minor-heading"><span data-es>Reconocimientos</span><span data-en hidden>Awards</span></h3>
+      <article class="entry" id="olimpiada" tabindex="-1">
+        <p class="label medal"><span data-es>Medalla de bronce</span><span data-en hidden>Bronze medal</span> · <time datetime="2020">2020</time></p>
+        <p class="copy"><span data-es>Olimpiada Nacional de Matemáticas</span><span data-en hidden>National Mathematics Olympiad</span></p>
+      </article>
+    </section>
+    <section id="proyectos" aria-labelledby="projects-title">
+      <h2 id="projects-title"><span data-es>Proyectos seleccionados</span><span data-en hidden>Selected projects</span></h2>
+      <article class="project purple" id="ghostport" tabindex="-1">
+        <p class="label"><span data-es>Ciberseguridad · IA local · 2026</span><span data-en hidden>Cybersecurity · Local AI · 2026</span></p>
+        <h3>GhostPort</h3>
+        <p class="copy"><span data-es>Desarrollé un prototipo que usa Gemma de forma local para aprender los conceptos de Nmap de manera interactiva.</span><span data-en hidden>I built a prototype that uses a locally running Gemma model to make Nmap concepts easier to learn interactively.</span></p>
+      </article>
+      <article class="project water" id="h2oeste" tabindex="-1">
+        <p class="label"><span data-es>Agentes de IA · Logística</span><span data-en hidden>AI agents · Logistics</span></p>
+        <h3>H2Oeste</h3>
+        <p class="copy"><span data-es>Propuesta de coordinación para el reparto de agua en Panamá Oeste. El diseño plantea usar varios agentes para organizar reportes y apoyar la planificación de rutas de camiones cisterna.</span><span data-en hidden>A proposal to coordinate water delivery in West Panama. The design uses multiple agents to organize reports and support tanker route planning.</span></p>
+      </article>
+      <article class="project gold" id="lore" tabindex="-1">
+        <p class="label"><span data-es>Juego de mesa · Prototipado físico</span><span data-en hidden>Board game · Physical prototyping</span></p>
+        <h3 lang="en">Legacy of the Ruined Empire (LORE)</h3>
+        <p class="copy"><span data-es>Juego de mesa cooperativo de fantasía. Trabajé en las cartas y en el diseño de un tablero modular con un castillo central para prototipado en 3D.</span><span data-en hidden>A cooperative fantasy board game. I worked on the cards and on a modular board design with a central castle for 3D prototyping.</span></p>
+      </article>
+      <article class="project purple" id="echo" tabindex="-1">
+        <p class="label"><span data-es>Diseño de juego · Identidad visual</span><span data-en hidden>Game design · Visual identity</span></p>
+        <h3><span data-es>Proyecto ECHO</span><span data-en hidden>Project ECHO</span></h3>
+        <p class="copy"><span data-es>Juego de ciencia ficción ambientado en un laboratorio subterráneo. Desarrollé recursos visuales para la ambientación, como señalización holográfica y objetos interactivos.</span><span data-en hidden>A sci-fi game set in an underground research facility. I developed visual assets for the setting, including holographic signage and interactive objects.</span></p>
+      </article>
+      <article class="project" id="protocolo-azar" tabindex="-1">
+        <p class="label"><span data-es>Juego web · Probabilidad</span><span data-en hidden>Web game · Probability</span></p>
+        <h3 lang="es">Protocolo Azar</h3>
+        <p class="copy"><span data-es>Juego de estudio que combina teoría de probabilidad, 30 retos de práctica y un laboratorio de simulación de riesgos. Funciona sin conexión y guarda el avance.</span><span data-en hidden>A study game combining probability theory, 30 practice challenges, and a risk simulation lab. It runs offline and saves progress.</span></p>
+      </article>
+      <article class="project purple" id="canal-breach" tabindex="-1">
+        <p class="label"><span data-es>Juego de mesa · Ciberseguridad</span><span data-en hidden>Board game · Cybersecurity</span></p>
+        <h3>CANAL//BREACH</h3>
+        <p class="copy"><span data-es>Concepto de juego cooperativo inspirado en los CTF y ambientado en un Panamá futurista. Empezó como proyecto de Sistemas Colaborativos y combina acertijos, exploración y gestión de recursos.</span><span data-en hidden>A cooperative CTF-inspired game concept set in a futuristic Panama. It started as a Collaborative Systems class project and combines puzzles, exploration, and resource management.</span></p>
+      </article>
+    </section>
+    <section id="educacion" aria-labelledby="education-title">
+      <h2 id="education-title"><span data-es>Educación y habilidades</span><span data-en hidden>Education and skills</span></h2>
+      <article class="entry" id="utp" tabindex="-1">
+        <p class="label"><span data-es>En curso</span><span data-en hidden>In progress</span></p>
+        <h3><span data-es>Ingeniería en Sistemas y Computación</span><span data-en hidden>Systems and Computer Engineering</span></h3>
+        <p class="copy" lang="es">Universidad Tecnológica de Panamá</p>
+      </article>
+      <article class="entry" id="istmo" tabindex="-1">
+        <p class="label"><span data-es>En curso</span><span data-en hidden>In progress</span></p>
+        <h3><span data-es>Ingeniería en Ciberseguridad</span><span data-en hidden>Cybersecurity Engineering</span></h3>
+        <p class="copy" lang="es">Universidad del Istmo</p>
+      </article>
+      <h3 class="minor-heading" id="habilidades" tabindex="-1"><span data-es>Habilidades técnicas</span><span data-en hidden>Technical skills</span></h3>
+      <ul class="tags">
+          <li class="tag">Python</li><li class="tag">Java</li><li class="tag">C#</li>
+          <li class="tag"><span data-es>Ciberseguridad</span><span data-en hidden>Cybersecurity</span></li>
+          <li class="tag"><span data-es>Agentes de IA</span><span data-en hidden>AI agents</span></li>
+          <li class="tag"><span data-es>Prototipado 3D</span><span data-en hidden>3D prototyping</span></li>
+      </ul>
+      <h3 class="minor-heading" id="idiomas" tabindex="-1"><span data-es>Idiomas</span><span data-en hidden>Languages</span></h3>
+      <dl class="proficiency">
+        <div><dt><span data-es>Español</span><span data-en hidden>Spanish</span></dt><dd><span data-es>Nativo</span><span data-en hidden>Native</span></dd></div>
+        <div><dt><span data-es>Inglés</span><span data-en hidden>English</span></dt><dd><span data-es>Avanzado</span><span data-en hidden>Advanced</span></dd></div>
+        <div><dt><span data-es>Ruso</span><span data-en hidden>Russian</span></dt><dd><span data-es>A2 inicial · autoevaluado</span><span data-en hidden>Early A2 · self-assessed</span></dd></div>
+        <div><dt><span data-es>Griego</span><span data-en hidden>Greek</span></dt><dd><span data-es>6 años de estudio escolar</span><span data-en hidden>6 years of school study</span></dd></div>
+      </dl>
+    </section>
+    <section id="laboratorios" aria-labelledby="labs-title">
+      <h2 id="labs-title"><span data-es>Bitácora de laboratorios</span><span data-en hidden>Security lab log</span></h2>
+      <p class="copy"><span data-es>Salas y máquinas completadas en TryHackMe y Hack The Box.</span><span data-en hidden>Completed rooms and machines on TryHackMe and Hack The Box.</span></p>
+      <article class="entry" id="tryhackme" tabindex="-1">
+        <p class="label"><a href="https://tryhackme.com/p/Mochi17">TryHackMe · Mochi17</a></p>
+        <p class="copy"><span data-es>Entre el 6&nbsp;% con mejor clasificación (noviembre de 2026). Ruta Pre Security (Legacy) completada.</span><span data-en hidden>Top 6% on the public profile (November 2026). Completed the Pre Security (Legacy) learning path.</span></p>
+        <p class="copy"><span data-es>2.º puesto mensual en Panamá en 2023.</span><span data-en hidden>2nd place on Panama’s monthly leaderboard in 2023.</span></p>
+      </article>
+      <p class="copy" id="lab-empty"><span data-es>Todavía no hay salas ni máquinas registradas.</span><span data-en hidden>No rooms or machines logged yet.</span></p>
+      <ul class="lab-table" id="lab-list" aria-labelledby="labs-title" hidden></ul>
+    </section>
+  </div>
+</main>
+<footer class="wrap footer">
+  <span>Emilia Demercado · <span data-es>Panamá</span><span data-en hidden>Panama</span></span>
+  <a href="https://github.com/Mochi-coder-star">GitHub · Mochi-coder-star</a>
+</footer>
+<script id="published-labs" type="application/json">
+[
+  {"kind":"thm-room","date":"","name":"OWASP API Security Top 10 - 1","url":"https://tryhackme.com/room/owaspapisecuritytop105w"},
+  {"kind":"thm-room","date":"","name":"OWASP API Security Top 10 - 2","url":"https://tryhackme.com/room/owaspapisecuritytop10d0"},
+  {"kind":"thm-room","date":"","name":"Threat Modelling","url":"https://tryhackme.com/room/threatmodelling"},
+  {"kind":"thm-room","date":"","name":"Microsoft Windows Hardening","url":"https://tryhackme.com/room/microsoftwindowshardening"},
+  {"kind":"thm-room","date":"","name":"SAST","url":"https://tryhackme.com/room/sast"},
+  {"kind":"thm-room","date":"","name":"DAST","url":"https://tryhackme.com/room/dastzap"},
+  {"kind":"thm-room","date":"","name":"Intro to Digital Forensics","url":"https://tryhackme.com/room/introdigitalforensics"}
+]
+</script>
+<script>
+const languageButton = document.querySelector('#language');
+const motionButton = document.querySelector('#motion');
+const signal = document.querySelector('.signal');
+const spanishContent = document.querySelectorAll('[data-es]');
+const englishContent = document.querySelectorAll('[data-en]');
+const params = new URLSearchParams(location.search);
+let language = params.get('lang') === 'en' ? 'en' : 'es';
+
+const labList = document.querySelector('#lab-list');
+const labEmpty = document.querySelector('#lab-empty');
+const publishedLabs = JSON.parse(document.querySelector('#published-labs').textContent)
+  .sort((left, right) => right.date.localeCompare(left.date));
+const labTypes = {
+  'thm-room': ['TryHackMe · Sala', 'TryHackMe · Room'],
+  'thm-machine': ['TryHackMe · Máquina', 'TryHackMe · Machine'],
+  'htb-machine': ['Hack The Box · Máquina', 'Hack The Box · Machine']
+};
+
+function renderLabs() {
+  const locale = language === 'en' ? 1 : 0;
+  labList.replaceChildren();
+  publishedLabs.forEach(lab => {
+    const item = document.createElement('li');
+    item.className = 'lab-item';
+    const title = document.createElement('strong');
+    if (lab.url) {
+      const source = document.createElement('a');
+      source.href = lab.url;
+      source.textContent = lab.name;
+      title.append(source);
+    } else {
+      title.textContent = lab.name;
+    }
+    const type = document.createElement('span');
+    type.className = 'label';
+    type.textContent = labTypes[lab.kind][locale];
+    item.append(title, type);
+    if (lab.date) {
+      const date = document.createElement('time');
+      date.dateTime = lab.date;
+      date.textContent = new Intl.DateTimeFormat(language, { dateStyle: 'medium', timeZone: 'UTC' }).format(new Date(lab.date + 'T00:00:00Z'));
+      item.append(date);
+    }
+    labList.append(item);
+  });
+  labEmpty.hidden = publishedLabs.length > 0;
+  labList.hidden = publishedLabs.length === 0;
+}
+
+function renderMotionLabel() {
+  const paused = signal.classList.contains('paused');
+  motionButton.querySelector('[data-es]').textContent = paused ? 'Animar' : 'Pausar';
+  motionButton.querySelector('[data-en]').textContent = paused ? 'Play' : 'Pause';
+  motionButton.setAttribute('aria-label', language === 'es'
+    ? (paused ? 'Reanudar animación' : 'Pausar animación')
+    : (paused ? 'Resume animation' : 'Pause animation'));
+}
+
+function renderLanguage() {
+  const english = language === 'en';
+  document.documentElement.lang = language;
+  spanishContent.forEach(element => { element.hidden = english; });
+  englishContent.forEach(element => { element.hidden = !english; });
+  document.querySelectorAll('[data-label-es]').forEach(element => {
+    element.setAttribute('aria-label', english ? element.dataset.labelEn : element.dataset.labelEs);
+  });
+  document.title = english ? 'Emilia Demercado · CV and portfolio' : 'Emilia Demercado · CV y portafolio';
+  languageButton.textContent = english ? 'ES' : 'EN';
+  languageButton.lang = english ? 'es' : 'en';
+  languageButton.setAttribute('aria-label', english ? 'Leer en español' : 'Read in English');
+  renderMotionLabel();
+  renderLabs();
+  document.dispatchEvent(new Event('portfolio-language'));
+}
+
+languageButton.addEventListener('click', () => {
+  language = language === 'es' ? 'en' : 'es';
+  renderLanguage();
+  if (location.protocol === 'https:' || location.protocol === 'http:') {
+    const url = new URL(location.href);
+    if (language === 'en') url.searchParams.set('lang', 'en');
+    else url.searchParams.delete('lang');
+    history.replaceState(null, '', url);
+  }
+});
+motionButton.addEventListener('click', () => {
+  signal.classList.toggle('paused');
+  renderMotionLabel();
+  document.dispatchEvent(new Event('portfolio-motion'));
+});
+signal.classList.remove('paused');
+languageButton.hidden = false;
+motionButton.hidden = false;
+renderLanguage();
+function setupNetwork() {
+  const panel = document.querySelector('.network-panel');
+  const canvas = document.querySelector('#network-canvas');
+  const context = canvas.getContext('2d');
+  if (!context) return;
+
+  const fallback = document.querySelector('.radar-fallback');
+  const dialog = document.querySelector('#network-dialog');
+  const expand = document.querySelector('#network-expand');
+  const close = document.querySelector('#network-close');
+  const pause = document.querySelector('#network-motion');
+  const caption = document.querySelector('#network-caption');
+  const hoverLabel = document.querySelector('#network-hover');
+  const nodePicker = document.querySelector('#network-node');
+  const entryTitle = document.querySelector('#network-entry-title');
+  const entryLink = document.querySelector('#network-entry-link');
+  const layerButtons = Array.from(panel.querySelectorAll('[data-layer]'));
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  const palette = ['124,231,220', '187,245,131', '193,172,255'];
+  const layers = [
+    { x: -1.68, group: 0, radius: 1.08, entries: [
+      ['olimpiada', ['Bronce · Olimpiada de Matemáticas', 'Math Olympiad bronze'], ['Medalla de bronce en la Olimpiada Nacional de Matemáticas de 2020.', 'Bronze medal at the 2020 National Mathematics Olympiad.']],
+      ['dojoconf-2026', ['DojoConf 2026', 'DojoConf 2026'], ['Ponencia individual sobre extorsión digital en la era de los agentes de IA.', 'Solo talk on digital extortion in the age of AI agents.']],
+      ['dojoconf-2025', ['DojoConf 2025', 'DojoConf 2025'], ['Coponencia sobre ingeniería ofensiva e inteligencia artificial.', 'Co-presented a talk on offensive engineering and AI.']],
+      ['ejpt', ['Certificación eJPT', 'eJPT certification'], ['Certificación de INE en pruebas de penetración de nivel inicial.', 'INE’s junior penetration testing certification.']],
+      ['agentes-hf', ['Hugging Face · AI Agents Fundamentals', 'Hugging Face · AI Agents Fundamentals'], ['Certificado de fundamentos de agentes de IA.', 'Certificate in the fundamentals of AI agents.']],
+      ['tryhackme', ['TryHackMe · Mochi17', 'TryHackMe · Mochi17'], ['Top 6 % en noviembre de 2026. Completé la ruta Pre Security (Legacy).', 'Top 6% in November 2026. I completed the Pre Security (Legacy) learning path.']]
+    ] },
+    { x: -.56, group: 1, radius: 1.23, entries: [
+      ['istmo', ['Ciberseguridad', 'Cybersecurity'], ['Estudio Ingeniería en Ciberseguridad en la Universidad del Istmo.', 'I study Cybersecurity Engineering at Universidad del Istmo.']],
+      ['ia', ['Agentes de IA', 'AI agents'], ['Exploro la coordinación entre agentes y las implicaciones de seguridad de sus acciones.', 'I explore how agents coordinate and the security implications of their actions.'], 'habilidades'],
+      ['utp', ['Ingeniería en Sistemas', 'Systems Engineering'], ['Estudio Ingeniería en Sistemas y Computación en la Universidad Tecnológica de Panamá.', 'I study Systems and Computer Engineering at Universidad Tecnológica de Panamá.']],
+      ['programacion', ['Programación', 'Programming'], ['Trabajo con Python, Java y C#.', 'I work with Python, Java, and C#.'], 'habilidades']
+    ] },
+    { x: .56, group: 1, radius: 1.18, entries: [
+      ['probabilidad', ['Probabilidad', 'Probability'], ['Protocolo Azar lleva la teoría a ejercicios y simulaciones de riesgo.', 'Protocolo Azar puts theory into practice with exercises and risk simulations.'], 'protocolo-azar'],
+      ['prototipado', ['Prototipado 3D', '3D prototyping'], ['Diseñé componentes modulares y un castillo central para LORE.', 'I designed modular components and a central castle for LORE.'], 'lore'],
+      ['idiomas', ['Idiomas', 'Languages'], ['Español nativo, inglés avanzado y estudio de ruso y griego.', 'Native Spanish, advanced English, and studies in Russian and Greek.']],
+      ['juegos', ['Diseño de juegos', 'Game design'], ['Trabajo con mecánicas cooperativas, juegos de estudio e identidad visual.', 'I work on cooperative mechanics, learning games, and visual identity.'], 'proyectos']
+    ] },
+    { x: 1.68, group: 2, radius: .94, entries: [
+      ['ghostport', ['GhostPort', 'GhostPort'], ['Prototipo para aprender Nmap de forma interactiva con Gemma ejecutándose localmente.', 'An interactive Nmap learning prototype powered by a locally running Gemma model.']],
+      ['h2oeste', ['H2Oeste', 'H2Oeste'], ['Propuesta multiagente para coordinar el reparto de agua en Panamá Oeste.', 'A multi-agent proposal to coordinate water delivery in West Panama.']],
+      ['lore', ['Legacy of the Ruined Empire (LORE)', 'Legacy of the Ruined Empire (LORE)'], ['Juego cooperativo de fantasía con cartas y un tablero modular para prototipado 3D.', 'A cooperative fantasy game with cards and a modular board designed for 3D prototyping.']],
+      ['echo', ['Proyecto ECHO', 'Project ECHO'], ['Identidad visual y señalización holográfica para un laboratorio de ciencia ficción.', 'Visual identity and holographic signage for a sci-fi research facility.']],
+      ['protocolo-azar', ['Protocolo Azar', 'Protocolo Azar'], ['Juego web de probabilidad con 30 retos y un laboratorio de riesgo.', 'A probability web game with 30 challenges and a risk simulation lab.']],
+      ['canal-breach', ['CANAL//BREACH', 'CANAL//BREACH'], ['Concepto de juego cooperativo inspirado en los CTF, ambientado en un Panamá futurista.', 'A cooperative CTF-inspired game concept set in a futuristic Panama.']]
+    ] }
+  ];
+  const nodes = layers.flatMap(({ x, group, entries, radius }, layer) =>
+    entries.map(([id, title, description, destination = id], index) => {
+      const angle = index * Math.PI * 2 / entries.length + layer * .52;
+      const spread = radius * (.77 + ((index * 13 + layer * 7) % 6) * .048);
+      return { id, title, description, destination, x, y: Math.cos(angle) * spread, z: Math.sin(angle) * spread, group };
+    })
+  );
+  const nodesById = new Map(nodes.map(node => [node.id, node]));
+  const connections = [
+    ['olimpiada', 'probabilidad'], ['dojoconf-2026', 'istmo', 'ia'], ['dojoconf-2025', 'istmo', 'ia'],
+    ['ejpt', 'istmo', 'tryhackme'], ['agentes-hf', 'ia'], ['tryhackme', 'istmo', 'canal-breach'],
+    ['utp', 'programacion', 'probabilidad', 'juegos', 'idiomas'], ['programacion', 'prototipado', 'protocolo-azar'],
+    ['istmo', 'canal-breach', 'ghostport'], ['ia', 'h2oeste'], ['probabilidad', 'protocolo-azar'],
+    ['prototipado', 'lore'], ['juegos', 'lore', 'echo', 'protocolo-azar', 'canal-breach']
+  ];
+  const edges = connections.flatMap(([from, ...targets]) => targets.map(to => ({
+    source: nodesById.get(from), target: nodesById.get(to)
+  })));
+  const initialCaption = ['Selecciona un nodo para descubrir un logro, una habilidad o un proyecto.', 'Select a node to discover an achievement, skill, or project.'];
+  const pickerPrompt = ['Elige un nodo', 'Choose a node'];
+  let yaw = .52;
+  let pitch = -.25;
+  let zoom = 1;
+  let selectedGroup = null;
+  let selectedNode = null;
+  let pendingDestination = null;
+  let nearby = null;
+  let projected = [];
+  let width = 1;
+  let height = 1;
+  let pixelRatio = 1;
+  let time = 0;
+  let frame = 0;
+  let lastFrame = null;
+  let inView = true;
+  const pointers = new Map();
+
+  function requestFrame() {
+    if (!frame && !document.hidden) frame = requestAnimationFrame(draw);
+  }
+
+  function animate() {
+    return inView && !reducedMotion.matches && !signal.classList.contains('paused');
+  }
+
+  function rgba(color, opacity) {
+    return 'rgba(' + color + ',' + opacity + ')';
+  }
+
+  function draw(timestamp) {
+    frame = 0;
+    const moving = animate();
+    if (moving && lastFrame !== null) {
+      const elapsed = Math.min(48, timestamp - lastFrame);
+      time += elapsed;
+      if (!pointers.size && !nearby && !canvas.matches(':focus-visible')) yaw += elapsed * .00017;
+    }
+    lastFrame = moving ? timestamp : null;
+
+    const cy = Math.cos(yaw), sy = Math.sin(yaw);
+    const cx = Math.cos(pitch), sx = Math.sin(pitch);
+    const scale = Math.min(width / 5.15, height / 3.2) * zoom;
+    function project({ x, y, z }) {
+      const rotatedX = x * cy + z * sy;
+      const rotatedZ = z * cy - x * sy;
+      const rotatedY = y * cx - rotatedZ * sx;
+      const depth = y * sx + rotatedZ * cx;
+      const perspective = 5.7 / (5.7 - depth);
+      return { x: width * .5 + rotatedX * scale * perspective,
+        y: height * .47 + rotatedY * scale * perspective,
+        depth, perspective };
+    }
+
+    context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+    context.clearRect(0, 0, width, height);
+
+    context.lineWidth = 1;
+    for (const { x, radius, group } of layers) {
+      context.beginPath();
+      for (let index = 0; index <= 24; index += 1) {
+        const angle = index * Math.PI * 2 / 24;
+        const point = project({ x, y: Math.cos(angle) * radius, z: Math.sin(angle) * radius });
+        if (index === 0) context.moveTo(point.x, point.y);
+        else context.lineTo(point.x, point.y);
+      }
+      context.strokeStyle = rgba(palette[group], selectedGroup === group ? .35 : .13);
+      context.stroke();
+    }
+
+    const positions = new Map();
+    for (const node of nodes) positions.set(node, project(node));
+    const spotlight = nearby ?? selectedNode;
+    edges.forEach(({ source, target }, index) => {
+      const start = positions.get(source);
+      const end = positions.get(target);
+      const active = selectedGroup === null || source.group === selectedGroup || target.group === selectedGroup;
+      const highlighted = spotlight === source || spotlight === target;
+      const color = palette[target.group];
+      context.lineWidth = highlighted ? 1.7 : .9;
+      context.strokeStyle = rgba(color, highlighted ? .8 : active ? .35 : .1);
+      context.beginPath();
+      context.moveTo(start.x, start.y);
+      context.lineTo(end.x, end.y);
+      context.stroke();
+      if (moving && (highlighted || (active && index % 2 === 0))) {
+        const phase = ((time / 1750 + index * .137) % 1);
+        context.fillStyle = rgba(color, Math.sin(phase * Math.PI) * .85);
+        context.beginPath();
+        context.arc(start.x + (end.x - start.x) * phase,
+          start.y + (end.y - start.y) * phase, highlighted ? 2.5 : 1.65, 0, Math.PI * 2);
+        context.fill();
+      }
+    });
+
+    projected = Array.from(positions, ([node, position]) => ({ node, ...position }))
+      .sort((left, right) => left.depth - right.depth);
+    projected.forEach(({ node, x, y, perspective }) => {
+      const active = selectedGroup === null || selectedGroup === node.group;
+      const highlight = spotlight === node;
+      const color = palette[node.group];
+      const radius = (3.9 + Math.min(1.7, scale * .016)) * perspective;
+      context.fillStyle = rgba(color, highlight ? .34 : active ? .19 : .055);
+      context.beginPath();
+      context.arc(x, y, radius * (highlight ? 2.9 : 2.25), 0, Math.PI * 2);
+      context.fill();
+      context.fillStyle = rgba(color, highlight || active ? .96 : .31);
+      context.beginPath();
+      context.arc(x, y, radius, 0, Math.PI * 2);
+      context.fill();
+      if (highlight || active) {
+        context.fillStyle = '#f6fffc';
+        context.beginPath();
+        context.arc(x - radius * .24, y - radius * .24, Math.max(.75, radius * .26), 0, Math.PI * 2);
+        context.fill();
+      }
+      if (selectedNode === node) {
+        context.strokeStyle = rgba(color, .95);
+        context.lineWidth = 1.4;
+        context.beginPath();
+        context.arc(x, y, radius * 1.65, 0, Math.PI * 2);
+        context.stroke();
+      }
+    });
+    if (moving) requestFrame();
+  }
+
+  function resize() {
+    const bounds = canvas.getBoundingClientRect();
+    if (bounds.width <= 0 || bounds.height <= 0) return;
+    width = bounds.width;
+    height = bounds.height;
+    pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = Math.round(width * pixelRatio);
+    canvas.height = Math.round(height * pixelRatio);
+    requestFrame();
+  }
+
+  function updateHover(node) {
+    nearby = node;
+    hoverLabel.hidden = !node;
+    if (node) hoverLabel.textContent = node.title[language === 'en' ? 1 : 0];
+  }
+
+  function updateCaption() {
+    const locale = language === 'en' ? 1 : 0;
+    const text = selectedNode ? selectedNode.description[locale] : initialCaption[locale];
+    if (caption.textContent !== text) caption.textContent = text;
+    entryTitle.hidden = entryLink.hidden = !selectedNode;
+    if (selectedNode) {
+      entryTitle.textContent = selectedNode.title[locale];
+      entryLink.href = '#' + selectedNode.destination;
+    }
+    pause.textContent = motionButton.querySelector(language === 'es' ? '[data-es]' : '[data-en]').textContent;
+    pause.setAttribute('aria-label', motionButton.getAttribute('aria-label'));
+    fallback.classList.toggle('paused', signal.classList.contains('paused'));
+    layerButtons.forEach(button => button.setAttribute('aria-pressed', String(Number(button.dataset.layer) === selectedGroup)));
+    updateHover(nearby);
+  }
+
+  function renderPicker() {
+    const locale = language === 'en' ? 1 : 0;
+    nodePicker.replaceChildren(new Option(pickerPrompt[locale], ''));
+    nodes.forEach(node => {
+      if (selectedGroup === null || selectedGroup === node.group) {
+        nodePicker.add(new Option(node.title[locale], node.id));
+      }
+    });
+    nodePicker.value = selectedNode?.id ?? '';
+  }
+
+  function selectNode(node) {
+    selectedNode = node;
+    if (node && selectedGroup !== null && selectedGroup !== node.group) {
+      selectedGroup = null;
+      renderPicker();
+    }
+    nodePicker.value = node?.id ?? '';
+    updateCaption();
+    requestFrame();
+  }
+
+  function magnify(factor) {
+    zoom = Math.max(.55, Math.min(2.55, zoom * factor));
+    requestFrame();
+  }
+
+  function rotate(horizontal, vertical) {
+    yaw = (yaw + horizontal) % (Math.PI * 2);
+    pitch = Math.max(-1.36, Math.min(1.36, pitch + vertical));
+    updateHover(null);
+    requestFrame();
+  }
+
+  function pick(event) {
+    const { left, top } = canvas.getBoundingClientRect();
+    let best = 15;
+    let hit = null;
+    for (const { node, x, y } of [...projected].reverse()) {
+      const distance = Math.hypot(x - (event.clientX - left), y - (event.clientY - top));
+      if (distance < best) {
+        best = distance;
+        hit = node;
+      }
+    }
+    return hit;
+  }
+
+  function pinchDistance() {
+    const [first, second] = pointers.values();
+    return Math.hypot(first.x - second.x, first.y - second.y);
+  }
+
+  canvas.addEventListener('pointerdown', event => {
+    if (event.button !== 0 || pointers.size >= 2) return;
+    pointers.set(event.pointerId, { x: event.clientX, y: event.clientY,
+      startX: event.clientX, startY: event.clientY, dragged: false });
+    canvas.setPointerCapture(event.pointerId);
+    if (pointers.size === 2) {
+      for (const pointer of pointers.values()) pointer.dragged = true;
+      updateHover(null);
+    }
+  });
+
+  canvas.addEventListener('pointermove', event => {
+    const pointer = pointers.get(event.pointerId);
+    if (!pointer) {
+      if (pointers.size || event.pointerType === 'touch') return;
+      const hit = pick(event);
+      if (nearby !== hit) {
+        updateHover(hit);
+        requestFrame();
+      }
+      return;
+    }
+    const previousDistance = pointers.size === 2 ? pinchDistance() : 0;
+    const dx = event.clientX - pointer.x;
+    const dy = event.clientY - pointer.y;
+    pointer.x = event.clientX;
+    pointer.y = event.clientY;
+    if (previousDistance > 0) magnify(pinchDistance() / previousDistance);
+    else if (pointer.dragged) rotate(dx * .009, dy * .009);
+    else if (Math.hypot(pointer.x - pointer.startX, pointer.y - pointer.startY) > 5) {
+      pointer.dragged = true;
+      rotate((pointer.x - pointer.startX) * .009, (pointer.y - pointer.startY) * .009);
+    }
+  });
+
+  canvas.addEventListener('pointerup', event => {
+    const pointer = pointers.get(event.pointerId);
+    if (!pointer) return;
+    pointers.delete(event.pointerId);
+    if (!pointer.dragged) selectNode(pick(event));
+  });
+  for (const event of ['pointercancel', 'lostpointercapture']) {
+    canvas.addEventListener(event, ({ pointerId }) => pointers.delete(pointerId));
+  }
+  canvas.addEventListener('pointerleave', () => {
+    updateHover(null);
+    requestFrame();
+  });
+  canvas.addEventListener('wheel', event => {
+    if (event.ctrlKey || (!dialog.open && document.activeElement !== canvas)) return;
+    event.preventDefault();
+    magnify(Math.exp(-Math.sign(event.deltaY) * .12));
+  }, { passive: false });
+
+  const keys = {
+    ArrowLeft: () => rotate(-.14, 0), ArrowRight: () => rotate(.14, 0),
+    ArrowUp: () => rotate(0, -.14), ArrowDown: () => rotate(0, .14),
+    '+': () => magnify(1.2), '=': () => magnify(1.2), '-': () => magnify(1 / 1.2)
+  };
+  canvas.addEventListener('keydown', event => {
+    if (!Object.hasOwn(keys, event.key) || event.ctrlKey || event.altKey || event.metaKey) return;
+    event.preventDefault();
+    keys[event.key]();
+  });
+
+  document.querySelector('#network-zoom-in').addEventListener('click', () => magnify(1.2));
+  document.querySelector('#network-zoom-out').addEventListener('click', () => magnify(1 / 1.2));
+  document.querySelector('#network-reset').addEventListener('click', () => {
+    yaw = .52;
+    pitch = -.25;
+    zoom = 1;
+    updateHover(null);
+    selectedGroup = null;
+    selectNode(null);
+    renderPicker();
+  });
+  layerButtons.forEach(button => button.addEventListener('click', () => {
+    const group = Number(button.dataset.layer);
+    selectedGroup = selectedGroup === group ? null : group;
+    if (selectedGroup !== null && selectedNode?.group !== selectedGroup) selectNode(null);
+    else updateCaption();
+    renderPicker();
+    requestFrame();
+  }));
+  nodePicker.addEventListener('change', () => selectNode(nodesById.get(nodePicker.value) ?? null));
+  pause.addEventListener('click', () => motionButton.click());
+
+  function visitEntry(target) {
+    if (location.hash !== '#' + target.id) location.hash = target.id;
+    target.focus({ preventScroll: true });
+    target.scrollIntoView({ block: 'start' });
+  }
+
+  entryLink.addEventListener('click', event => {
+    const target = selectedNode && document.getElementById(selectedNode.destination);
+    if (!target || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    if (dialog.open) {
+      pendingDestination = target;
+      dialog.close();
+    } else visitEntry(target);
+  });
+
+  if (typeof dialog.showModal === 'function') {
+    expand.addEventListener('click', () => {
+      dialog.append(panel);
+      expand.hidden = true;
+      close.hidden = false;
+      dialog.showModal();
+      resize();
+      close.focus();
+    });
+    close.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('close', () => {
+      signal.append(panel);
+      expand.hidden = false;
+      close.hidden = true;
+      resize();
+      if (pendingDestination) {
+        const destination = pendingDestination;
+        pendingDestination = null;
+        visitEntry(destination);
+      } else expand.focus();
+    });
+  } else {
+    expand.hidden = true;
+  }
+
+  document.addEventListener('portfolio-language', () => {
+    renderPicker();
+    updateCaption();
+  });
+  document.addEventListener('portfolio-motion', () => {
+    lastFrame = null;
+    updateCaption();
+    requestFrame();
+  });
+  document.addEventListener('visibilitychange', () => {
+    lastFrame = null;
+    requestFrame();
+  });
+  reducedMotion.addEventListener('change', () => {
+    lastFrame = null;
+    requestFrame();
+  });
+  canvas.parentElement.prepend(fallback);
+  signal.classList.add('enhanced');
+  panel.hidden = false;
+  renderPicker();
+  updateCaption();
+  resize();
+  if ('ResizeObserver' in window) new ResizeObserver(resize).observe(canvas);
+  else window.addEventListener('resize', resize);
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([entry]) => {
+      inView = entry.isIntersecting;
+      lastFrame = null;
+      requestFrame();
+    }).observe(canvas);
+  }
+}
+
+setupNetwork();
+
+</script>
+</body>
+</html>
